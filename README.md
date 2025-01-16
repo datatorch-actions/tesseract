@@ -21,10 +21,9 @@ name: Segformer
 triggers:
   # Adds a button to the annotator.
   annotatorButton:
-    name: "Segformer Whole File"
+    name: "Tesseract Whole File"
     icon: brain
     flow: whole-file
-  # flow: 2-points
 
 jobs:
   predict:
