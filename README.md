@@ -28,7 +28,7 @@ jobs:
           name: ${{ event.fileName }}
 
       - name: Predict Segmentation
-        action: datatorch/tesseract
+        action: datatorch/tesseract@latest
         inputs:
           # Download file path from the previous action.
           imagePath: ${{ variable.path }}
