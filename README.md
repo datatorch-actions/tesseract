@@ -35,12 +35,7 @@ jobs:
 
           # Get the file id from action input
           fileId: ${{ event.fileId }}
-          # Get the 2 points the user clicked
-          # points: ${{ event.flowData.points }}
-
-          # Annotation created by the four points. We will insert the
-          # segmentation into this annotation
-          annotationId: ${{ event.annotationId }}
+         
 ```
 
 > **NOTE:** Running Segformer for the first time will take serval minutes to
