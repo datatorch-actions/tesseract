@@ -7,7 +7,7 @@
 ## Quick Start
 
 ```yaml
-name: Segformer
+name: Tesseract OCR
 
 triggers:
   # Adds a button to the annotator.
