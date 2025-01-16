@@ -1,0 +1,50 @@
+$schema: http://datatorch.io/schema/action.v1.json
+
+name: Segformer Action
+description: Runs Segformer on a given image.
+inputs:
+  imagePath:
+    type: string
+    required: true
+    description: Absolute path to image
+  points:
+    type: array
+    required: false
+    description: >
+      4 points marking the most left, right, bottom and top points of the shape. Not used for now
+  url:
+    type: string
+    default: http://localhost:3445
+    description: >
+      Url for sending requests. A Segformer docker image will be spun up on this
+      port if not found.
+  image:
+    type: string
+    default: add3000/segformer_server
+    description: Docker image to spin up.
+  labelId:
+    type: string
+    default: null
+    description: >
+      Label to assign annotation to. If not provided the segmentation
+      will not be inserted.
+  annotationId:
+    type: string
+    default: null
+    description: >
+      Annotation to insert segmentation into. If not provided the segmentation
+      will not be inserted.
+  simplify:
+    type: float
+    default: 1.5
+    description: >
+      Simplification tolerance applied to segmentation before importing. Set to
+      0 to disable. Disabling can significantly increase pipeline performance,
+      but decrease annotator performance.
+outputs:
+  segmentation:
+    type: array
+    description: Segmentation of points predicted by Segformer
+runs:
+  using: python
+  main: entry.py
