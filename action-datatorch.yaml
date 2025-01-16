@@ -1,26 +1,21 @@
 $schema: http://datatorch.io/schema/action.v1.json
 
-name: Segformer Action
-description: Runs Segformer on a given image.
+name: Tesseract Action
+description: Runs Tesseract on a given image.
 inputs:
   imagePath:
     type: string
     required: true
     description: Absolute path to image
-  points:
-    type: array
-    required: false
-    description: >
-      4 points marking the most left, right, bottom and top points of the shape. Not used for now
   url:
     type: string
-    default: http://localhost:3445
+    default: http://localhost:3455
     description: >
       Url for sending requests. A Segformer docker image will be spun up on this
       port if not found.
   image:
     type: string
-    default: add3000/segformer_server
+    default: franky1/tesseract
     description: Docker image to spin up.
   labelId:
     type: string
