@@ -2,18 +2,9 @@
   Tesseract OCR
 </h1>
 
-<h4 align="center">Use Segformer to get semantic segmentations</h4>
-
-<p align="center">
-  <img alt="Open Issues" src="https://img.shields.io/github/issues/aoxolotl/segformer_action">
-</p>
-
-Deploys [Segformer by NVIDIA Research](https://github.com/NVlabs/SegFormer) as a
-DataTorch action. Currently used for internal evaluation only.
+<h4 align="center">Use Tesseract OCR for optical character recognition</h4>
 
 ## Quick Start
-
-
 
 ```yaml
 name: Segformer
