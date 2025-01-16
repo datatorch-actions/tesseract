@@ -35,11 +35,7 @@ label_id = get_input("labelId")
 file_id = get_input("fileId")
 simplify = get_input("simplify")
 
-# [[10,20],[30, 40],[50,60],[70,80]]
-# points: List[Point] = [(10.0, 20.0), (30.0, 40.0), (50.0, 60.0), (70.0, 80.0)]
-# image_path = "/home/desktop/.config/datatorch/agent/temp/download-file/20201025_102443 (17th copy).jpg"
-
-CONTAINER_NAME = "datatorch-segformer-action"
+CONTAINER_NAME = "datatorch-tesseract-action"
 
 
 def return_container_status(container_name: str) -> str:
@@ -91,7 +87,7 @@ def start_server(port: int):
         print(f"No existing container found with name {CONTAINER_NAME}. Creating a new one.")
 
     # Create and run the container if it does not exist or was removed
-    print(f"Creating Segformer container on port {port}.")
+    print(f"Creating Tesseract container on port {port}.")
     print(
         f"Downloading {image} docker image. This may take a few mins.", flush=True
     )
@@ -104,7 +100,7 @@ def start_server(port: int):
         name=CONTAINER_NAME,
     )
     if isinstance(container, Model):
-        print(f"Created Segformer Container ({container.short_id}).")
+        print(f"Created Tesseract Container ({container.short_id}).")
 
 
 def call_model(path: str, points: List[Point], address: str) -> List[List[Point]]:
@@ -156,7 +152,7 @@ def send_request(annotation_id=None):
     while True:
         try:
             attempts += 1
-            print(f"Attempt {attempts}: Request to Segformer Server")
+            print(f"Attempt {attempts}: Request to Tesseract Server")
             segments = call_model(image_path, points, address.geturl())
             print(len(segments))
             for seg in segments:
