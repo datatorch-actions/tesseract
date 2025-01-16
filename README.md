@@ -28,7 +28,7 @@ jobs:
           name: ${{ event.fileName }}
 
       - name: Predict Segmentation
-        action: aoxolotl/segformer_action@betterAPI
+        action: datatorch/tesseract
         inputs:
           # Download file path from the previous action.
           imagePath: ${{ variable.path }}
