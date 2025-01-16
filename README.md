@@ -1,5 +1,5 @@
 <h1 align="center">
-  Segformer Action
+  Tesseract OCR
 </h1>
 
 <h4 align="center">Use Segformer to get semantic segmentations</h4>
